@@ -1,8 +1,12 @@
 package com.netfujix.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class CartaoCredito {
@@ -10,7 +14,11 @@ public class CartaoCredito {
     @Id
     @GeneratedValue
     private Integer id;
-    private Integer usuarioID;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "usuario.id")
+    private Usuario usuario;
+
     private String numero;
     private String dataValidade;
     private Integer codigoSeguranca;
@@ -24,12 +32,12 @@ public class CartaoCredito {
         this.id = id;
     }
 
-    public Integer getUsuarioID() {
-        return this.usuarioID;
+    public Usuario getUsuario() {
+        return this.usuario;
     }
 
-    public void setUsuarioID(Integer usuarioID) {
-        this.usuarioID = usuarioID;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
     public String getNumero() {
