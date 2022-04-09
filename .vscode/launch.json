@@ -1,0 +1,15 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-ApiApplication<netfujix>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "console": "internalConsole",
+      "mainClass": "com.netfujix.ApiApplication",
+      "projectName": "netfujix",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}
