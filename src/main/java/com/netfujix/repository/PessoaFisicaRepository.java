@@ -1,11 +1,11 @@
 package com.netfujix.repository;
 
-import com.netfujix.model.UsuarioCpf;
+import com.netfujix.model.PessoaFisica;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UsuarioCpfRepository extends JpaRepository<UsuarioCpf, Integer> {
+public interface PessoaFisicaRepository extends JpaRepository<PessoaFisica, Integer> {
     
 }

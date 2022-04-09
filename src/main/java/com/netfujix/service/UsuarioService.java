@@ -1,5 +1,6 @@
 package com.netfujix.service;
 
+
 import com.netfujix.model.Usuario;
 import com.netfujix.repository.UsuarioRepository;
 
@@ -14,4 +15,6 @@ public class UsuarioService {
     public Usuario salvar(Usuario usuario) {
         return repository.save(usuario);
     }
+
+    
 }
