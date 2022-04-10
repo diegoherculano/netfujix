@@ -23,12 +23,12 @@ public class PessoaFisicaResource {
     private PessoaFisicaService service;
 
     @PostMapping
-    public PessoaFisica salvar(@RequestBody PessoaFisica usuario) {
-        return service.salvar(usuario);
+    public PessoaFisica salvar(@RequestBody PessoaFisica pessoaFisica) {
+        return service.salvar(pessoaFisica);
     }
 
     @PutMapping
-    public PessoaFisica  atualizar(@RequestBody PessoaFisica pessoaFisica) throws Exception {
+    public PessoaFisica atualizar(@RequestBody PessoaFisica pessoaFisica) throws Exception {
         return service.atualizar(pessoaFisica);
     }
 
