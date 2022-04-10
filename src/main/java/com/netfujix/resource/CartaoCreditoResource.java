@@ -2,8 +2,8 @@ package com.netfujix.resource;
 
 import java.util.List;
 
-import com.netfujix.model.Usuario;
-import com.netfujix.service.UsuarioService;
+import com.netfujix.model.CartaoCredito;
+import com.netfujix.service.CartaoCreditoService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -16,24 +16,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/usuario")
-public class UsuarioResource {
+@RequestMapping("/cartao")
+public class CartaoCreditoResource {
 
     @Autowired
-    private UsuarioService service;
+    private CartaoCreditoService service;
 
     @PostMapping
-    public Usuario salvar(@RequestBody Usuario usuario) {
-        return service.salvar(usuario);
+    public CartaoCredito salvar(@RequestBody CartaoCredito cartaoCredito) {
+        return service.salvar(cartaoCredito);
     }
 
     @PutMapping
-    public Usuario atualizar(@RequestBody Usuario usuario) throws Exception {
-        return service.atualizar(usuario);
+    public CartaoCredito atualizar(@RequestBody CartaoCredito cartaoCredito) throws Exception {
+        return service.atualizar(cartaoCredito);
     }
 
     @GetMapping
-    public List<Usuario> listar() {
+    public List<CartaoCredito> listar() {
         return service.listar();
     }
 
@@ -41,5 +41,4 @@ public class UsuarioResource {
     public void remover(@PathVariable int id) {
         service.deletar(id);
     }
-
 }

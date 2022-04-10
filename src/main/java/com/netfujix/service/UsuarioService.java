@@ -1,5 +1,6 @@
 package com.netfujix.service;
 
+import java.util.List;
 
 import com.netfujix.model.Usuario;
 import com.netfujix.repository.UsuarioRepository;
@@ -16,5 +17,18 @@ public class UsuarioService {
         return repository.save(usuario);
     }
 
-    
+    public Usuario atualizar(Usuario usuario) throws Exception {
+        if (usuario.getId() == null) {
+            throw new Exception("ID não encontrado");
+        }
+        return repository.save(usuario);
+    }
+
+    public void deletar(int id) {
+        repository.deleteById(id);
+    }
+
+    public List<Usuario> listar() {
+        return repository.findAll();
+    }
 }
