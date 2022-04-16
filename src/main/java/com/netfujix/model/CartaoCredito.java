@@ -1,8 +1,5 @@
 package com.netfujix.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import javax.persistence.*;
 
 @Entity
@@ -17,6 +14,7 @@ public class CartaoCredito {
     private String nomeCartao;
 
     @OneToOne
+    @JoinColumn(nullable = false)
     private Usuario usuario;
 
     public Integer getId() {
