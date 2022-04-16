@@ -1,0 +1,132 @@
+{
+	"info": {
+		"_postman_id": "9d7e040b-59d5-43ed-88a7-0191e573e752",
+		"name": "Netfujix",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "usuario",
+			"item": [
+				{
+					"name": "usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"{{$randomFullName}}\",\n    \"email\": \"{{$randomEmail}}\",\n    \"senha\": \"{{$randomPassword}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/usuario",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"usuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "usuario",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/usuario",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"usuario"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cartao",
+			"item": [
+				{
+					"name": "cartao",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/cartao",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cartao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cartao",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"numero\": \"13123131312\",\n    \"dataValidade\": \"312213312\",\n    \"codigoSeguranca\": 123,\n    \"nomeCartao\": \"card\",\n    \"usuario\": {\n        \"id\": 3\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/cartao",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cartao"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080",
+			"type": "default"
+		}
+	]
+}
