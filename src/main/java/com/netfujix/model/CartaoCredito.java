@@ -13,7 +13,7 @@ public class CartaoCredito {
     private Integer codigoSeguranca;
     private String nomeCartao;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(nullable = false)
     private Usuario usuario;
 
