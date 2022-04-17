@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "9d7e040b-59d5-43ed-88a7-0191e573e752",
+		"_postman_id": "21352192-5a56-4c5b-b982-b85802f2d102",
 		"name": "Netfujix",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -80,7 +80,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"numero\": \"13123131312\",\n    \"dataValidade\": \"312213312\",\n    \"codigoSeguranca\": 123,\n    \"nomeCartao\": \"card\",\n    \"usuario\": {\n        \"id\": 3\n    }\n}",
+							"raw": "{\n    \"numero\": \"13123131312\",\n    \"dataValidade\": \"312213312\",\n    \"codigoSeguranca\": 123,\n    \"nomeCartao\": \"card\",\n    \"usuario\": {\n        \"id\": 1\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -94,6 +94,128 @@
 							],
 							"path": [
 								"cartao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cartao",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"numero\": \"hauahua\",\n    \"dataValidade\": \"teste\",\n    \"codigoSeguranca\": 123,\n    \"nomeCartao\": \"card\",\n    \"usuario\": {\n        \"id\": 2\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/cartao",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cartao"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "pf",
+			"item": [
+				{
+					"name": "pf",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/pessoaFisica",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"pessoaFisica"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pf",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dataNasc\": \"1231\",\r\n    \"cpf\": \"123123123\",\r\n    \"usuario\": {\r\n        \"nome\": \"teste\",\r\n        \"email\": \"ala\",\r\n        \"senha\": \"123\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/cartao",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cartao"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "pj",
+			"item": [
+				{
+					"name": "pj",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/pessoaJuridica",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"pessoaJuridica"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pf",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cnpj\": \"123123123\",\r\n    \"usuario\": {\r\n        \"nome\": \"teste\",\r\n        \"email\": \"ala\",\r\n        \"senha\": \"123\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/pessoaJuridica",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"pessoaJuridica"
 							]
 						}
 					},

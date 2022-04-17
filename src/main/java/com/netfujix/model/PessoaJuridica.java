@@ -1,8 +1,11 @@
 package com.netfujix.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 public class PessoaJuridica {
@@ -11,31 +14,34 @@ public class PessoaJuridica {
     @GeneratedValue
     private Integer id;
 
-    private Integer usuarioId;
     private String cnpj;
 
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(nullable = false)
+    private Usuario usuario;
+
     public Integer getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(Integer id) {
         this.id = id;
     }
 
-    public Integer getUsuarioId() {
-        return usuarioId;
-    }
-
-    public void setUsuarioId(Integer usuarioId) {
-        this.usuarioId = usuarioId;
-    }
-
     public String getCnpj() {
-        return cnpj;
+        return this.cnpj;
     }
 
     public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
     }
-}
 
+    public Usuario getUsuario() {
+        return this.usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+}
