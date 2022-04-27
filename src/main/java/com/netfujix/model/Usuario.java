@@ -14,6 +14,7 @@ public class Usuario {
     private String nome;
     private String email;
     private String senha;
+    private boolean admin;
 
     public Integer getId() {
         return id;
@@ -46,4 +47,17 @@ public class Usuario {
     public void setSenha(String senha) {
         this.senha = senha;
     }
+
+    public boolean isAdmin() {
+        return this.admin;
+    }
+
+    public boolean getAdmin() {
+        return this.admin;
+    }
+
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
+    }
+
 }
