@@ -1,8 +1,13 @@
 package com.netfujix.model;
 
+import java.util.List;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -14,10 +19,10 @@ public class Genero {
     private String nome;
 
     @OneToMany
-    private Filme filme;
+    private Set<Filme> filme;
 
     public Integer getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(Integer id) {
@@ -25,10 +30,19 @@ public class Genero {
     }
 
     public String getNome() {
-        return nome;
+        return this.nome;
     }
 
     public void setNome(String nome) {
         this.nome = nome;
     }
+
+    public Set<Filme> getFilme() {
+        return this.filme;
+    }
+
+    public void setFilme(Set<Filme> filme) {
+        this.filme = filme;
+    }
+
 }

@@ -8,6 +8,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import org.hibernate.annotations.ManyToAny;
+
 @Entity
 public class Filme {
     @Id
@@ -31,14 +33,6 @@ public class Filme {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getGeneroId() {
-        return this.generoId;
-    }
-
-    public void setGeneroId(String generoId) {
-        this.generoId = generoId;
     }
 
     public String getTitulo() {
@@ -89,4 +83,11 @@ public class Filme {
         this.trailer = trailer;
     }
 
+    public Genero getGenero() {
+        return this.genero;
+    }
+
+    public void setGenero(Genero genero) {
+        this.genero = genero;
+    }
 }
