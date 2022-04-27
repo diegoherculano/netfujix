@@ -3,6 +3,10 @@ package com.netfujix.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Filme {
@@ -10,13 +14,16 @@ public class Filme {
     @GeneratedValue
     private Integer id;
 
-    private String generoId;
     private String titulo;
     private String duracao;
     private String sinopse;
     private String ano;
     private String relevancia;
     private String trailer;
+
+    @ManyToOne
+    @JoinColumn(nullable = false)
+    private Genero genero;
 
     public Integer getId() {
         return this.id;
