@@ -3,16 +3,18 @@ package com.netfujix.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Genero {
-
 
     @Id
     @GeneratedValue
     private Integer Id;
     private String nome;
 
+    @OneToMany
+    private Filme filme;
 
     public Integer getId() {
         return Id;
