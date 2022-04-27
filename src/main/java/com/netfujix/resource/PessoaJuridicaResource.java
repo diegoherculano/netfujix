@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/pessoajuridica")
+@RequestMapping("/pessoaJuridica")
 public class PessoaJuridicaResource {
 
     @Autowired
@@ -43,4 +43,3 @@ public class PessoaJuridicaResource {
     }
 
 }
-
