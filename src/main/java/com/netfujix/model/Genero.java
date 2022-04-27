@@ -10,18 +10,18 @@ public class Genero {
 
     @Id
     @GeneratedValue
-    private Integer Id;
+    private Integer id;
     private String nome;
 
     @OneToMany
     private Filme filme;
 
     public Integer getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Integer id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getNome() {
