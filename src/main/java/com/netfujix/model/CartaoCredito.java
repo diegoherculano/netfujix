@@ -1,8 +1,6 @@
 package com.netfujix.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class CartaoCredito {
@@ -10,30 +8,25 @@ public class CartaoCredito {
     @Id
     @GeneratedValue
     private Integer id;
-    private Integer usuarioID;
     private String numero;
     private String dataValidade;
     private Integer codigoSeguranca;
     private String nomeCartao;
 
+    @ManyToOne
+    @JoinColumn(nullable = false)
+    private Usuario usuario;
+
     public Integer getId() {
-        return this.id;
+        return id;
     }
 
     public void setId(Integer id) {
         this.id = id;
     }
 
-    public Integer getUsuarioID() {
-        return this.usuarioID;
-    }
-
-    public void setUsuarioID(Integer usuarioID) {
-        this.usuarioID = usuarioID;
-    }
-
     public String getNumero() {
-        return this.numero;
+        return numero;
     }
 
     public void setNumero(String numero) {
@@ -41,7 +34,7 @@ public class CartaoCredito {
     }
 
     public String getDataValidade() {
-        return this.dataValidade;
+        return dataValidade;
     }
 
     public void setDataValidade(String dataValidade) {
@@ -49,7 +42,7 @@ public class CartaoCredito {
     }
 
     public Integer getCodigoSeguranca() {
-        return this.codigoSeguranca;
+        return codigoSeguranca;
     }
 
     public void setCodigoSeguranca(Integer codigoSeguranca) {
@@ -57,10 +50,18 @@ public class CartaoCredito {
     }
 
     public String getNomeCartao() {
-        return this.nomeCartao;
+        return nomeCartao;
     }
 
     public void setNomeCartao(String nomeCartao) {
         this.nomeCartao = nomeCartao;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 }
