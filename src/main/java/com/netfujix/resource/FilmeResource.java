@@ -1,6 +1,7 @@
 package com.netfujix.resource;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.netfujix.model.Filme;
 import com.netfujix.service.FilmeService;
@@ -40,6 +41,16 @@ public class FilmeResource {
     @DeleteMapping("{id}")
     public void remover(@PathVariable int id) {
         service.deletar(id);
+    }
+
+    @GetMapping("/genero/{genero}")
+    public List<Filme> listarByGenero(@PathVariable String genero) {
+        return service.listaByGenero(genero);
+    }
+
+    @GetMapping("{id}")
+    public Optional<Filme> findById(@PathVariable int id) {
+        return service.buscaPorId(id);
     }
 
 }

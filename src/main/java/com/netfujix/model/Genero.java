@@ -26,9 +26,6 @@ public class Genero {
     private Integer id;
     private String nome;
 
-    // @OneToMany(mappedBy = "genero")
-    // private List<Filme> filme;
-
     public Integer getId() {
         return this.id;
     }
@@ -44,13 +41,4 @@ public class Genero {
     public void setNome(String nome) {
         this.nome = nome;
     }
-
-    // public List<Filme> getFilme() {
-    // return this.filme;
-    // }
-
-    // public void setFilme(List<Filme> filme) {
-    // this.filme = filme;
-    // }
-
 }
