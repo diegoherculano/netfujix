@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/plano")
@@ -32,6 +33,16 @@ public class PlanoResource {
     @DeleteMapping("{id}")
     public void remover(@PathVariable int id) {
         service.deletar(id);
+    }
+
+    @GetMapping("/usuario/{usuario}")
+    public List<Plano> listarByUsuario(@PathVariable String usuario) {
+        return service.listaByUsuario(usuario);
+    }
+
+    @GetMapping("{id}")
+    public Optional<Plano> findById(@PathVariable int id) {
+        return service.buscaPorId(id);
     }
 
 }
