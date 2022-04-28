@@ -1,11 +1,13 @@
 package com.netfujix.service;
 
+import com.netfujix.model.Filme;
 import com.netfujix.model.Genero;
 import com.netfujix.repository.GeneroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class GeneroService {
@@ -31,5 +33,10 @@ public class GeneroService {
     public List<Genero> listarTodos (){
         return repository.findAll();
     }
+
+    public Optional <Genero> buscaPorId (int id){
+        return repository.findById(id);
+    }
+
 
 }
