@@ -1,6 +1,7 @@
 package com.netfujix.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.netfujix.model.Usuario;
 import com.netfujix.repository.UsuarioRepository;
@@ -30,5 +31,9 @@ public class UsuarioService {
 
     public List<Usuario> listar() {
         return repository.findAll();
+    }
+
+    public Optional<Usuario> buscaPorId(int id) {
+        return repository.findById(id);
     }
 }
