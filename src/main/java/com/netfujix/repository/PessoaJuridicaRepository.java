@@ -1,11 +1,19 @@
 package com.netfujix.repository;
 
-import com.netfujix.model.PessoaJuridica;
+import java.util.List;
+import java.util.Optional;
 
+import com.netfujix.model.PessoaJuridica;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PessoaJuridicaRepository extends JpaRepository<PessoaJuridica, Integer> {
+    Optional<PessoaJuridica> findById(Integer id);
+
+    @Query("select f from Usuario f where f.usuario.nome = :usuario")
+    List<PessoaJuridica> buscaByUsuario(@Param("usuario") String usuario);
 
 }
