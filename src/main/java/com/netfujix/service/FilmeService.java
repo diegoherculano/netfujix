@@ -1,6 +1,7 @@
 package com.netfujix.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.netfujix.model.Filme;
 import com.netfujix.repository.FilmeRepository;
@@ -30,5 +31,13 @@ public class FilmeService {
 
     public List<Filme> listar() {
         return repository.findAll();
+    }
+
+    public List<Filme> listaByGenero(String genero) {
+        return repository.buscaByGenero(genero);
+    }
+
+    public Optional<Filme> buscaPorId(int id) {
+        return repository.findById(id);
     }
 }

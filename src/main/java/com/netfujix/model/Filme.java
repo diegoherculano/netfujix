@@ -1,12 +1,16 @@
 package com.netfujix.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+
+import org.hibernate.annotations.ManyToAny;
 
 @Entity
 public class Filme {
@@ -31,14 +35,6 @@ public class Filme {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getGeneroId() {
-        return this.generoId;
-    }
-
-    public void setGeneroId(String generoId) {
-        this.generoId = generoId;
     }
 
     public String getTitulo() {
@@ -87,6 +83,14 @@ public class Filme {
 
     public void setTrailer(String trailer) {
         this.trailer = trailer;
+    }
+
+    public Genero getGenero() {
+        return this.genero;
+    }
+
+    public void setGenero(Genero genero) {
+        this.genero = genero;
     }
 
 }
