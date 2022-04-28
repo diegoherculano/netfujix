@@ -1,14 +1,22 @@
 package com.netfujix.model;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.databind.annotation.JsonTypeIdResolver;
+
+import org.hibernate.type.TrueFalseType;
 
 @Entity
 public class Genero {
@@ -18,8 +26,8 @@ public class Genero {
     private Integer id;
     private String nome;
 
-    @OneToMany
-    private Set<Filme> filme;
+    // @OneToMany(mappedBy = "genero")
+    // private List<Filme> filme;
 
     public Integer getId() {
         return this.id;
@@ -37,12 +45,12 @@ public class Genero {
         this.nome = nome;
     }
 
-    public Set<Filme> getFilme() {
-        return this.filme;
-    }
+    // public List<Filme> getFilme() {
+    // return this.filme;
+    // }
 
-    public void setFilme(Set<Filme> filme) {
-        this.filme = filme;
-    }
+    // public void setFilme(List<Filme> filme) {
+    // this.filme = filme;
+    // }
 
 }
