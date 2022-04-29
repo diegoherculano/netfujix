@@ -14,8 +14,5 @@ import org.springframework.stereotype.Repository;
 public interface PlanoRepository extends JpaRepository<Plano, Integer> {
     Optional<Plano> findById(Integer id);
 
-    @Query("select f from Usuario f where f.usuario.nome = :usuario")
-    List<Plano> buscaByUsuario(@Param("usuario") String usuario);
-
 
 }
