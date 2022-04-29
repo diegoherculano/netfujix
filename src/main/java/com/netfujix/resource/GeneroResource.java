@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/genero")
@@ -34,4 +35,8 @@ public class GeneroResource {
         service.deletar(id);
     }
 
+    @GetMapping("{id}")
+    public Optional<Genero> findById (@PathVariable int id){
+        return service.buscaPorId(id);
+    }
 }
