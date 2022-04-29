@@ -13,7 +13,4 @@ import org.springframework.stereotype.Repository;
 public interface PessoaJuridicaRepository extends JpaRepository<PessoaJuridica, Integer> {
     Optional<PessoaJuridica> findById(Integer id);
 
-    @Query("select f from Usuario f where f.usuario.nome = :usuario")
-    List<PessoaJuridica> buscaByUsuario(@Param("usuario") String usuario);
-
 }
