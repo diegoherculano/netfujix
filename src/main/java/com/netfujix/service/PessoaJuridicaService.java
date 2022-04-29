@@ -33,9 +33,6 @@ public class PessoaJuridicaService {
         return repository.findAll();
     }
 
-    public List<PessoaJuridica> listaByUsuario(String usuario) {
-        return repository.buscaByUsuario(usuario);
-    }
 
     public Optional<PessoaJuridica> buscaPorId(int id) {
         return repository.findById(id);
