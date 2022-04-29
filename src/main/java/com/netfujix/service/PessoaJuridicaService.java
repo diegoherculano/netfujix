@@ -1,6 +1,7 @@
 package com.netfujix.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.netfujix.model.PessoaJuridica;
 import com.netfujix.repository.PessoaJuridicaRepository;
@@ -30,5 +31,10 @@ public class PessoaJuridicaService {
 
     public List<PessoaJuridica> listar() {
         return repository.findAll();
+    }
+
+
+    public Optional<PessoaJuridica> buscaPorId(int id) {
+        return repository.findById(id);
     }
 }

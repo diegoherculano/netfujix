@@ -1,6 +1,7 @@
 package com.netfujix.resource;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.netfujix.model.PessoaJuridica;
 import com.netfujix.service.PessoaJuridicaService;
@@ -40,6 +41,12 @@ public class PessoaJuridicaResource {
     @DeleteMapping("{id}")
     public void remover(@PathVariable int id) {
         service.deletar(id);
+    }
+
+
+    @GetMapping("{id}")
+    public Optional<PessoaJuridica> findById(@PathVariable int id) {
+        return service.buscaPorId(id);
     }
 
 }
