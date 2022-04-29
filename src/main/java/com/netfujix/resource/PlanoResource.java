@@ -35,10 +35,6 @@ public class PlanoResource {
         service.deletar(id);
     }
 
-    @GetMapping("/usuario/{usuario}")
-    public List<Plano> listarByUsuario(@PathVariable String usuario) {
-        return service.listaByUsuario(usuario);
-    }
 
     @GetMapping("{id}")
     public Optional<Plano> findById(@PathVariable int id) {
