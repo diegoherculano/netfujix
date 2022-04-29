@@ -43,10 +43,6 @@ public class PessoaJuridicaResource {
         service.deletar(id);
     }
 
-    @GetMapping("/usuario/{usuario}")
-    public List<PessoaJuridica> listarByUsuario(@PathVariable String usuario) {
-        return service.listaByUsuario(usuario);
-    }
 
     @GetMapping("{id}")
     public Optional<PessoaJuridica> findById(@PathVariable int id) {
