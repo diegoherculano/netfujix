@@ -32,10 +32,6 @@ public class PlanoService {
         return repository.findAll();
     }
 
-    public List<Plano> listaByUsuario(String usuario) {
-        return repository.buscaByUsuario(usuario);
-    }
-
     public Optional<Plano> buscaPorId(int id) {
         return repository.findById(id);
     }
