@@ -13,18 +13,10 @@ public class Plano {
 
     private Integer duracaoDias;
     private String nome;
-    private Float valor;
-
-    public Float getValor() {
-        return valor;
-    }
-
-    public void setValor(Float valor) {
-        this.valor = valor;
-    }
+    private Double valor;
 
     public Integer getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(Integer id) {
@@ -32,7 +24,7 @@ public class Plano {
     }
 
     public Integer getDuracaoDias() {
-        return duracaoDias;
+        return this.duracaoDias;
     }
 
     public void setDuracaoDias(Integer duracaoDias) {
@@ -40,11 +32,19 @@ public class Plano {
     }
 
     public String getNome() {
-        return nome;
+        return this.nome;
     }
 
     public void setNome(String nome) {
         this.nome = nome;
     }
-}
 
+    public Double getValor() {
+        return this.valor;
+    }
+
+    public void setValor(Double valor) {
+        this.valor = valor;
+    }
+
+}
