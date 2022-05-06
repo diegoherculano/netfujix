@@ -1,6 +1,7 @@
 package com.netfujix.resource;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.netfujix.model.Filme;
 import com.netfujix.service.FilmeService;
@@ -11,10 +12,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
 @RestController
 @RequestMapping("/filme")
@@ -41,6 +41,16 @@ public class FilmeResource {
     @DeleteMapping("{id}")
     public void remover(@PathVariable int id) {
         service.deletar(id);
+    }
+
+    @GetMapping("/genero/{genero}")
+    public List<Filme> listarByGenero(@PathVariable String genero) {
+        return service.listaByGenero(genero);
+    }
+
+    @GetMapping("{id}")
+    public Optional<Filme> findById(@PathVariable int id) {
+        return service.buscaPorId(id);
     }
 
 }

@@ -1,6 +1,7 @@
 package com.netfujix.resource;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.netfujix.model.Usuario;
 import com.netfujix.service.UsuarioService;
@@ -40,6 +41,11 @@ public class UsuarioResource {
     @DeleteMapping("{id}")
     public void remover(@PathVariable int id) {
         service.deletar(id);
+    }
+
+    @GetMapping("{id}")
+    public Optional<Usuario> findById(@PathVariable int id) {
+        return service.buscaPorId(id);
     }
 
 }
