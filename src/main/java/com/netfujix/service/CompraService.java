@@ -1,5 +1,7 @@
 package com.netfujix.service;
 import java.util.List;
+import java.util.Optional;
+
 import com.netfujix.model.Compra;
 import com.netfujix.repository.CompraRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +35,10 @@ public class CompraService {
 
     public List<Compra> listar() {
         return repository.findAll();
+    }
+    
+    public Optional<Compra> buscaPorId(int id) {
+        return repository.findById(id);
     }
 
 }

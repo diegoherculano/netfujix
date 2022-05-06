@@ -33,7 +33,6 @@ public class PessoaJuridicaService {
         return repository.findAll();
     }
 
-
     public Optional<PessoaJuridica> buscaPorId(int id) {
         return repository.findById(id);
     }
