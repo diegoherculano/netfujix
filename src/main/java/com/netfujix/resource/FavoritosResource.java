@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/Favoritos")
+@RequestMapping("/favoritos")
 public class FavoritosResource {
 
     @Autowired
@@ -42,7 +42,6 @@ public class FavoritosResource {
     public void remover(@PathVariable int id) {
         service.deletar(id);
     }
-
 
     @GetMapping("{id}")
     public Optional<Favoritos> findById(@PathVariable int id) {
