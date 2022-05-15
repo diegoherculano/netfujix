@@ -19,11 +19,10 @@ public class PessoaFisicaService {
     }
     
     public PessoaFisica atualizar(PessoaFisica pessoa)throws Exception{
-        if (pessoa.getId() == IdNull) {
-            throw new NullPointerException("ID não encontrado");
+        if (pessoa.equals(null)) {
+            throw new NullPointerException();
         }
         return repository.save(pessoa);
-        
     }
     public void deletar(int id) throws Exception {
         if(Integer.valueOf(id)!= null){
