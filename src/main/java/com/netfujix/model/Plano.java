@@ -1,50 +1,29 @@
 package com.netfujix.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 @Entity
+@Getter
+@Setter
 public class Plano {
 
     @Id
     @GeneratedValue
+    @NotNull
     private Integer id;
-
+    @NotNull
     private Integer duracaoDias;
+    @NotNull
     private String nome;
+    @NotNull
     private Double valor;
 
-    public Integer getId() {
-        return this.id;
-    }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Integer getDuracaoDias() {
-        return this.duracaoDias;
-    }
-
-    public void setDuracaoDias(Integer duracaoDias) {
-        this.duracaoDias = duracaoDias;
-    }
-
-    public String getNome() {
-        return this.nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public Double getValor() {
-        return this.valor;
-    }
-
-    public void setValor(Double valor) {
-        this.valor = valor;
-    }
 
 }
