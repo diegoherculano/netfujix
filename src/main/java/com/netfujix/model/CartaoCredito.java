@@ -18,7 +18,6 @@ import lombok.Setter;
 @Setter
 public class CartaoCredito {
 
-    @NotNull
     @Id
     @GeneratedValue
     private Integer id;

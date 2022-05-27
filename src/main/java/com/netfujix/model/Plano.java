@@ -17,7 +17,6 @@ public class Plano {
 
     @Id
     @GeneratedValue
-    @NotNull
     private Integer id;
     @NotNull
     @NumberFormat

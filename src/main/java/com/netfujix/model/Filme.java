@@ -42,4 +42,5 @@ public class Filme {
     @ManyToOne
     @JoinColumn(nullable = false)
     private Genero genero;
+
 }

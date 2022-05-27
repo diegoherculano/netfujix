@@ -6,8 +6,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
-import javax.validation.constraints.Max;
 import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.br.CNPJ;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -19,11 +20,10 @@ public class PessoaJuridica {
 
     @Id
     @GeneratedValue
-    @NotNull
     private Integer id;
 
     @NotNull
-    @Max(14)
+    @CNPJ
     private String cnpj;
 
     @OneToOne(cascade = CascadeType.PERSIST)
