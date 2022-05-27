@@ -9,9 +9,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.br.CPF;
+
 import lombok.Getter;
 import lombok.Setter;
-
 
 @Entity
 @Getter
@@ -20,18 +21,17 @@ public class PessoaFisica {
     @Id
     @GeneratedValue
     private int id;
-    
+
     @NotNull
     private String dataNasc;
 
     @NotNull
     @Column(name = "cpf", length = 11)
+    @CPF
     private String cpf;
 
     @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(nullable = false)
     private Usuario usuario;
-
-
 
 }

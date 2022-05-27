@@ -5,86 +5,41 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
+
+import org.springframework.format.annotation.NumberFormat;
+
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
 public class Filme {
     @Id
     @GeneratedValue
     private Integer id;
 
+    @NotNull
     private String titulo;
+
+    @NotNull
     private String duracao;
+
+    @NotNull
     private String sinopse;
+
+    @NotNull
+    @NumberFormat
     private String ano;
+
+    @NotNull
     private String relevancia;
+
+    @NotNull
     private String trailer;
 
     @ManyToOne
     @JoinColumn(nullable = false)
     private Genero genero;
-
-    public Integer getId() {
-        return this.id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getTitulo() {
-        return this.titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public String getDuracao() {
-        return this.duracao;
-    }
-
-    public void setDuracao(String duracao) {
-        this.duracao = duracao;
-    }
-
-    public String getSinopse() {
-        return this.sinopse;
-    }
-
-    public void setSinopse(String sinopse) {
-        this.sinopse = sinopse;
-    }
-
-    public String getAno() {
-        return this.ano;
-    }
-
-    public void setAno(String ano) {
-        this.ano = ano;
-    }
-
-    public String getRelevancia() {
-        return this.relevancia;
-    }
-
-    public void setRelevancia(String relevancia) {
-        this.relevancia = relevancia;
-    }
-
-    public String getTrailer() {
-        return this.trailer;
-    }
-
-    public void setTrailer(String trailer) {
-        this.trailer = trailer;
-    }
-
-    public Genero getGenero() {
-        return this.genero;
-    }
-
-    public void setGenero(Genero genero) {
-        this.genero = genero;
-    }
-
 }

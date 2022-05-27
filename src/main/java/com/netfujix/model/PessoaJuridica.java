@@ -1,8 +1,5 @@
 package com.netfujix.model;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,6 +8,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotNull;
+
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Getter
@@ -29,6 +29,5 @@ public class PessoaJuridica {
     @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(nullable = false)
     private Usuario usuario;
-
 
 }

@@ -1,12 +1,14 @@
 package com.netfujix.model;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
+
+import org.springframework.format.annotation.NumberFormat;
+
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Getter
@@ -18,12 +20,11 @@ public class Plano {
     @NotNull
     private Integer id;
     @NotNull
+    @NumberFormat
     private Integer duracaoDias;
     @NotNull
     private String nome;
     @NotNull
     private Double valor;
-
-
 
 }

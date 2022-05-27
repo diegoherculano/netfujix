@@ -3,6 +3,9 @@ package com.netfujix.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class Usuario {
@@ -10,10 +13,18 @@ public class Usuario {
     @Id
     @GeneratedValue
     private Integer id;
+
+    @NotEmpty
     private String nome;
+
+    @Email
+    @NotEmpty
     private String email;
+
+    @Min(6)
     private String senha;
-    private boolean admin;
+
+    private boolean admin = false;
 
     public Integer getId() {
         return id;

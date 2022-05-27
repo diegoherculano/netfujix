@@ -1,13 +1,17 @@
 package com.netfujix.model;
 
-import lombok.Getter;
-import lombok.Setter;
-import org.hibernate.validator.constraints.CreditCardNumber;
-import org.springframework.format.annotation.DateTimeFormat;
-
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.CreditCardNumber;
+
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Getter
@@ -23,18 +27,17 @@ public class CartaoCredito {
     private String numero;
 
     @NotNull
-    @DateTimeFormat
     private String dataValidade;
 
     @Max(3)
     private Integer codigoSeguranca;
 
     @NotNull
+    @Max(255)
     private String nomeCartao;
 
     @ManyToOne
     @JoinColumn(nullable = false)
     private Usuario usuario;
-
 
 }
