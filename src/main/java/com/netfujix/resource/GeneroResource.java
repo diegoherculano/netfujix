@@ -2,6 +2,7 @@ package com.netfujix.resource;
 
 import com.netfujix.model.Genero;
 import com.netfujix.service.GeneroService;
+import org.apache.el.stream.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

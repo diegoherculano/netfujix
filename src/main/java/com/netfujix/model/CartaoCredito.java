@@ -1,67 +1,40 @@
 package com.netfujix.model;
 
+import lombok.Getter;
+import lombok.Setter;
+import org.hibernate.validator.constraints.CreditCardNumber;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.NotNull;
 
 @Entity
+@Getter
+@Setter
 public class CartaoCredito {
 
+    @NotNull
     @Id
     @GeneratedValue
     private Integer id;
+
+    @CreditCardNumber
     private String numero;
+
+    @NotNull
+    @DateTimeFormat
     private String dataValidade;
+
+    @Max(3)
     private Integer codigoSeguranca;
+
+    @NotNull
     private String nomeCartao;
 
     @ManyToOne
     @JoinColumn(nullable = false)
     private Usuario usuario;
 
-    public Integer getId() {
-        return id;
-    }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getNumero() {
-        return numero;
-    }
-
-    public void setNumero(String numero) {
-        this.numero = numero;
-    }
-
-    public String getDataValidade() {
-        return dataValidade;
-    }
-
-    public void setDataValidade(String dataValidade) {
-        this.dataValidade = dataValidade;
-    }
-
-    public Integer getCodigoSeguranca() {
-        return codigoSeguranca;
-    }
-
-    public void setCodigoSeguranca(Integer codigoSeguranca) {
-        this.codigoSeguranca = codigoSeguranca;
-    }
-
-    public String getNomeCartao() {
-        return nomeCartao;
-    }
-
-    public void setNomeCartao(String nomeCartao) {
-        this.nomeCartao = nomeCartao;
-    }
-
-    public Usuario getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
-    }
 }
