@@ -11,15 +11,15 @@ import org.springframework.stereotype.Service;
 public class CompraService {
     @Autowired
     private CompraRepository repository;
-    Integer IdNull = null;
+    
 
     public Compra salvar(Compra compra){
         return repository.save(compra);
     }
     
     public Compra atualizar(Compra compra)throws Exception{
-        if (compra.getId() == IdNull) {
-            throw new NullPointerException("ID não encontrado");
+        if (compra.equals(null)) {
+            throw new NullPointerException("Compra não encontrada");
         }
         return repository.save(compra);
         

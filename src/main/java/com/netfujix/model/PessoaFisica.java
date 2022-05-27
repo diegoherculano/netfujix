@@ -1,55 +1,37 @@
 package com.netfujix.model;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.NotNull;
+
+import lombok.Getter;
+import lombok.Setter;
+
 
 @Entity
+@Getter
+@Setter
 public class PessoaFisica {
     @Id
     @GeneratedValue
     private int id;
-
+    
+    @NotNull
     private String dataNasc;
+
+    @NotNull
+    @Column(name = "cpf", length = 11)
     private String cpf;
 
     @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(nullable = false)
     private Usuario usuario;
 
-    public int getId() {
-        return this.id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getDataNasc() {
-        return this.dataNasc;
-    }
-
-    public void setDataNasc(String dataNasc) {
-        this.dataNasc = dataNasc;
-    }
-
-    public String getCpf() {
-        return this.cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-
-    public Usuario getUsuario() {
-        return this.usuario;
-    }
-
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
-    }
 
 }
